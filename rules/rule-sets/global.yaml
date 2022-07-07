@@ -196,6 +196,7 @@ payload:
   - DOMAIN-SUFFIX,streaming.mediaservices.windows.net
   - DOMAIN-SUFFIX,substack.com
   - DOMAIN-SUFFIX,supertop.co
+  - DOMAIN-SUFFIX,telegra.ph
   - DOMAIN-SUFFIX,telegram.me
   - DOMAIN-SUFFIX,telegram.org
   - DOMAIN-SUFFIX,telephony.goog
@@ -17063,7 +17064,6 @@ payload:
   - DOMAIN-SUFFIX,telecom-cafe.com
   - DOMAIN-SUFFIX,telecomspace.com
   - DOMAIN-SUFFIX,teleconomiser.com
-  - DOMAIN-SUFFIX,telegra.ph
   - DOMAIN-SUFFIX,telegraph.co.uk
   - DOMAIN-SUFFIX,teleplus.in
   - DOMAIN-SUFFIX,telesco.pe
