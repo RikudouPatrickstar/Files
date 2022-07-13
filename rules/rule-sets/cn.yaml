@@ -62,6 +62,7 @@ payload:
   - DOMAIN-SUFFIX,alibaba.com
   - DOMAIN-SUFFIX,alibabacloud.com
   - DOMAIN-SUFFIX,alicdn.com
+  - DOMAIN-SUFFIX,alicloudccp.com
   - DOMAIN-SUFFIX,alikunlun.com
   - DOMAIN-SUFFIX,alipay.com
   - DOMAIN-SUFFIX,alipayobjects.com
