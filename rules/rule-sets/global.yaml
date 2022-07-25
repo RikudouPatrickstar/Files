@@ -203,6 +203,7 @@ payload:
   - DOMAIN-SUFFIX,theplatform.com
   - DOMAIN-SUFFIX,tidal.com
   - DOMAIN-SUFFIX,tinyurl.com
+  - DOMAIN-SUFFIX,traffichaus.com
   - DOMAIN-SUFFIX,ttvnw.net
   - DOMAIN-SUFFIX,twitter.com
   - DOMAIN-SUFFIX,twitter.jp
@@ -12684,7 +12685,6 @@ payload:
   - DOMAIN-SUFFIX,mmmca.com
   - DOMAIN-SUFFIX,mmmglobal.org
   - DOMAIN-SUFFIX,mmmoffice.com
-  - DOMAIN-SUFFIX,mmotraffic.com
   - DOMAIN-SUFFIX,mms333.ga
   - DOMAIN-SUFFIX,mms333.gq
   - DOMAIN-SUFFIX,mmsishow.com
@@ -17661,7 +17661,6 @@ payload:
   - DOMAIN-SUFFIX,trace.org
   - DOMAIN-SUFFIX,tracfone.com
   - DOMAIN-SUFFIX,tracking.rb88.com
-  - DOMAIN-SUFFIX,trackingclick.net
   - DOMAIN-SUFFIX,trade.kgieworld.com
   - DOMAIN-SUFFIX,trader.lcg.com
   - DOMAIN-SUFFIX,trader711.com
@@ -17669,7 +17668,6 @@ payload:
   - DOMAIN-SUFFIX,trading212.com
   - DOMAIN-SUFFIX,tradingview.com
   - DOMAIN-SUFFIX,traeumtgerade.de
-  - DOMAIN-SUFFIX,traffichaus.com
   - DOMAIN-SUFFIX,trakt.tv
   - DOMAIN-SUFFIX,transferstudentcn.weebly.com
   - DOMAIN-SUFFIX,translate.goog
