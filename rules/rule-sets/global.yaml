@@ -50,7 +50,6 @@ payload:
   - DOMAIN-SUFFIX,aka.ms
   - DOMAIN-SUFFIX,amazonvideo.com
   - DOMAIN-SUFFIX,ameba.jp
-  - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,apkfind.com
   - DOMAIN-SUFFIX,apple.news
   - DOMAIN-SUFFIX,appledaily.com
@@ -3225,6 +3224,7 @@ payload:
   - DOMAIN-SUFFIX,ampj662.com
   - DOMAIN-SUFFIX,ampj665.com
   - DOMAIN-SUFFIX,ampj90.com
+  - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,amplusmarketing.com
   - DOMAIN-SUFFIX,ampproject.com
   - DOMAIN-SUFFIX,ampproject.net
