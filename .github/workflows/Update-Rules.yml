@@ -83,6 +83,7 @@ jobs:
       run: |
         cd ./rules
         docker run -d --restart=always -p 25500:25500 thisispatrick/subconverter:latest
+        sleep 5
         wget -q 'http://localhost:25500/sub?target=clash&url=123&insert=false&expand=true&new_name=true&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini' -O clash.rule
         if [ "$?" -eq "0" ];then
             echo '正在转换'
