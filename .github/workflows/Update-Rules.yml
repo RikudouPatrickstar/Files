@@ -1,0 +1,117 @@
+name: Update-Rules
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'rules/**.ini'
+      - '.github/workflows/**.yml'
+  schedule:
+    - cron: 10 16 */2 * *
+  workflow_dispatch:
+env:
+  TZ: Asia/Shanghai 
+jobs:
+  update-rules:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Get Code
+      uses: actions/checkout@master
+    - name: Prepare
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        git config --global user.email 68163551+RikudouPatrickstar@users.noreply.github.com
+        git config --global user.name RikudouPatrickstar
+        mkdir -p ./rules/rule-sets
+    - name: Get GlobalMedia Rule-sets
+      env:
+        GLOBAL_MEDIA_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+      run: |
+        cd ./rules/rule-sets
+        curl -sSL -4 --connect-timeout 10 $GLOBAL_MEDIA_URL -o global-media.yaml
+        echo 'payload:' > global-media-domain.yaml
+        echo 'payload:' > global-media-ip.yaml
+        cat global-media.yaml | grep 'DOMAIN' >> global-media-domain.yaml
+        cat global-media.yaml | grep 'IP-CIDR' >> global-media-ip.yaml
+        rm global-media.yaml
+    - name: Get Google Rule-sets
+      env:
+        GOOGLE_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+      run: |
+        cd ./rules/rule-sets
+        curl -sSL -4 --connect-timeout 10 $GOOGLE_URL -o - | grep -v 'IP-CIDR' > google-domain.yaml
+        curl -sSL -4 --connect-timeout 10 $GOOGLE_URL -o - | grep -v 'DOMAIN' > google-ip.yaml
+    - name: Get Proxy Rule-sets
+      env:
+        PROXY_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ProxyLite/ProxyLite.yaml
+      run: |
+        cd ./rules/rule-sets
+        curl -sSL -4 --connect-timeout 10 $PROXY_URL -o - \
+        | grep -v 'IP-CIDR' \
+        | egrep -v 'DOMAIN.*(,|\.)[0-9]+\.[A-Za-z]+$' \
+        | egrep -v 'DOMAIN.*(,|\.)[A-Za-z]*[0-9]{4,}[A-Za-z]*\.[A-Za-z]+$' > proxy-domain.yaml
+    - name: Get CN Rule-sets
+      env:
+        CN_DOMAIN_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
+        CN_IP_URL: https://raw.githubusercontent.com/RikudouPatrickstar/GeoIP2-CN/release/cncidr.yaml
+      run: |
+        cd ./rules/rule-sets
+        curl -sSL -4 --connect-timeout 10 $CN_DOMAIN_URL -o - \
+        | grep -v 'IP-CIDR' \
+        | egrep -v 'DOMAIN.*(,|\.)[0-9]+\.[A-Za-z]+$' \
+        | egrep -v 'DOMAIN.*(,|\.)[A-Za-z]*[0-9]{4,}[A-Za-z]*\.[A-Za-z]+$' > cn-domain.yaml
+        curl -sSL -4 --connect-timeout 10 $CN_IP_URL -o cn-ip.yaml
+    - name: Get Lan Rules
+      env:
+        LAN_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+      run: |
+        cd ./rules/rule-sets
+        curl -sSL -4 --connect-timeout 10 $LAN_URL -o - | grep -v 'IP-CIDR' > lan-domain.yaml
+        curl -sSL -4 --connect-timeout 10 $LAN_URL -o - | grep -v 'DOMAIN' > lan-ip.yaml
+    - name: Remove IPv6 Rules
+      run: |
+        cd ./rules/rule-sets
+        sed -i '/#/d;/IP-CIDR6/d' *.yaml
+    - name: Push Rule-sets
+      run: |
+        git add .
+        git commit -m "Update rule-set `date +%Y/%m/%d\ %H:%M:%S`" || exit 0
+        git push
+    - name: Generate Shadowrocket Rule
+      run: |
+        cd ./rules
+        docker run -d --restart=always -p 25500:25500 thisispatrick/subconverter:latest
+        wget -q 'http://localhost:25500/sub?target=clash&url=123&insert=false&expand=true&new_name=true&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini' -O clash.rule
+        if [ "$?" -eq "0" ];then
+            echo '正在转换'
+            sed -i '/port:/,/rules:/d' clash.rule
+            sed -i 's/ - //g' clash.rule
+            sed -i 's/,🌐 直连规则/,DIRECT/g' clash.rule
+            sed -i 's/,📺 国外媒体/,PROXY/g' clash.rule
+            sed -i 's/,🚀 外网代理/,PROXY/g' clash.rule
+            sed -i 's/MATCH,.*/FINAL,PROXY/g' clash.rule
+            echo '[General]' > Shadowrocket.conf
+            echo 'bypass-system = true' >> Shadowrocket.conf
+            echo 'dns-server = system, 119.29.29.29, 223.5.5.5, 223.6.6.6' >> Shadowrocket.conf
+            echo 'skip-proxy = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, localhost, *.local, *.crashlytics.com, *.cn' >> Shadowrocket.conf
+            echo 'bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32' >> Shadowrocket.conf
+            echo >> Shadowrocket.conf
+            echo '[Rule]' >> Shadowrocket.conf
+            cat clash.rule >> Shadowrocket.conf 
+            echo >> Shadowrocket.conf
+            echo '[URL Rewrite]' >> Shadowrocket.conf
+            echo '^http://(www.)?google.cn https://www.google.com 302' >> Shadowrocket.conf
+        fi
+        rm clash.rule
+    - name: Push Shadowrocket Rule
+      run: |
+        git add .
+        git commit -m "Update shadowrocket `date +%Y/%m/%d\ %H:%M:%S`" || exit 0
+        git push
+    - name: Cleanup Workflow
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 1

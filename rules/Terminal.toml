@@ -1,0 +1,174 @@
+version = 1
+# subconverter外部配置（Terminal）
+# 参考：https://github.com/tindy2013/subconverter/blob/master/base/config/example_external_config.toml
+[custom]
+enable_rule_generator = true
+overwrite_original_rules = true
+
+# 节点筛选（只取常用地区：香港、台湾、新加坡、日本、美国）
+include_remarks = [
+  "(香港|HK|((?i)Hong Kong)|🇭🇰|台湾|TW|((?i)Taiwan)|🇹🇼|狮城|新加坡|SG|((?i)Singapore)|🇸🇬|日本|JP|((?i)Japan)|🇯🇵|美国|US|((?i)United States)|🇺🇲)"
+]
+
+
+# 主策略组
+[[custom_groups]]
+name = "🚀 外网代理"
+type = "select"
+rule = [
+  "[]🚩 香港选择",
+  "[]🍌 台湾选择",
+  "[]🦁 狮城选择",
+  "[]👺 日本选择",
+  "[]🗽 美国选择",
+  "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "📺 国外媒体"
+type = "select"
+rule = [
+  "[]🚩 香港选择",
+  "[]🍌 台湾选择",
+  "[]🦁 狮城选择",
+  "[]👺 日本选择",
+  "[]🗽 美国选择",
+  "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "🌐 直连规则"
+type = "select"
+rule = [ "[]DIRECT", "[]🚀 外网代理" ]
+
+[[custom_groups]]
+name = "🐟 漏网之鱼"
+type = "select"
+rule = [ "[]🚀 外网代理", "[]DIRECT" ]
+
+
+# 地区选择策略组
+[[custom_groups]]
+name = "🚩 香港选择"
+type = "select"
+rule = [ "[]⚡ 香港自动", "(香港|HK|((?i)Hong Kong)|🇭🇰)" ]
+
+[[custom_groups]]
+name = "🍌 台湾选择"
+type = "select"
+rule = [ "[]⚡ 台湾自动", "(台湾|TW|((?i)Taiwan)|🇹🇼)" ]
+
+[[custom_groups]]
+name = "🦁 狮城选择"
+type = "select"
+rule = [ "[]⚡ 狮城自动", "(狮城|新加坡|SG|((?i)Singapore)|🇸🇬)" ]
+
+[[custom_groups]]
+name = "👺 日本选择"
+type = "select"
+rule = [ "[]⚡ 日本自动", "(日本|JP|((?i)Japan)|🇯🇵)" ]
+
+[[custom_groups]]
+name = "🗽 美国选择"
+type = "select"
+rule = [ "[]⚡ 美国自动", "(美国|US|((?i)United States)|🇺🇲)" ]
+
+
+# 地区延迟自动测试策略组（每25s测试一次，容差15ms）
+[[custom_groups]]
+name = "⚡ 香港自动"
+type = "url-test"
+rule = [ "(香港|HK|((?i)Hong Kong)|🇭🇰)" ]
+url = "http://www.gstatic.com/generate_204"
+interval = 25
+tolerance = 15
+
+[[custom_groups]]
+name = "⚡ 台湾自动"
+type = "url-test"
+rule = [ "(台湾|TW|((?i)Taiwan)|🇹🇼)" ]
+url = "http://www.gstatic.com/generate_204"
+interval = 25
+tolerance = 15
+
+[[custom_groups]]
+name = "⚡ 狮城自动"
+type = "url-test"
+rule = [ "(狮城|新加坡|SG|((?i)Singapore)|🇸🇬)" ]
+url = "http://www.gstatic.com/generate_204"
+interval = 25
+tolerance = 15
+
+[[custom_groups]]
+name = "⚡ 日本自动"
+type = "url-test"
+rule = [ "(日本|JP|((?i)Japan)|🇯🇵)" ]
+url = "http://www.gstatic.com/generate_204"
+interval = 25
+tolerance = 15
+
+[[custom_groups]]
+name = "⚡ 美国自动"
+type = "url-test"
+rule = [ "(美国|US|((?i)United States)|🇺🇲)" ]
+url = "http://www.gstatic.com/generate_204"
+interval = 25
+tolerance = 15
+
+
+# 规则集（更新间隔为120秒）
+[[rulesets]]
+group = "DIRECT"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/lan-domain.yaml"
+interval = 120
+
+[[rulesets]]
+group = "📺 国外媒体"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/global-media-domain.yaml"
+interval = 120
+
+[[rulesets]]
+group = "🚀 外网代理"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-domain.yaml"
+interval = 120
+
+[[rulesets]]
+group = "🚀 外网代理"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/proxy-domain.yaml"
+interval = 120
+
+[[rulesets]]
+group = "🌐 直连规则"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/cn-domain.yaml"
+interval = 120
+
+[[rulesets]]
+group = "DIRECT"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/lan-ip.yaml"
+interval = 120
+
+[[rulesets]]
+group = "📺 国外媒体"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/global-media-ip.yaml"
+interval = 120
+
+[[rulesets]]
+group = "🚀 外网代理"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-ip.yaml"
+interval = 120
+
+[[rulesets]]
+group = "🌐 直连规则"
+ruleset = "[]GEOIP,CN"
+
+[[rulesets]]
+group = "🐟 漏网之鱼"
+ruleset = "[]FINAL"
