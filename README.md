@@ -23,11 +23,6 @@ https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Shadowro
 ```
 
 ## zsh
-[zshrc](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/zsh/zshrc)
-```shell
-wget https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/zsh/zshrc -O .zshrc
-```
-
 [af-magic-mod.zsh-theme](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/zsh/af-magic-mod.zsh-theme)
 ```shell
 wget https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/zsh/af-magic-mod.zsh-theme
