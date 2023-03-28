@@ -1,19 +1,14 @@
 # 杂物间
 
-## subconverter 外部配置（三种格式）
+## subconverter 外部配置
 [Terminal.ini](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Terminal.ini):
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini
 ```
 
-[Terminal.toml](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Terminal.toml):
+[SpecialArea.ini](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/SpecialArea.ini):
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.toml
-```
-
-[Terminal.yml](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Terminal.yml):
-```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.yml
+&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FSpecialArea.ini
 ```
 
 ## Shadowrocket 远程配置
