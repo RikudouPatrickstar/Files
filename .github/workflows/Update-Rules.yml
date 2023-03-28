@@ -89,9 +89,10 @@ jobs:
             echo '正在转换'
             sed -i '/port:/,/rules:/d' clash.rule
             sed -i 's/ - //g' clash.rule
-            sed -i 's/,🌐 直连规则/,DIRECT/g' clash.rule
+            sed -i 's/,🚀 代理加速/,PROXY/g' clash.rule
             sed -i 's/,📺 国外媒体/,PROXY/g' clash.rule
-            sed -i 's/,🚀 外网代理/,PROXY/g' clash.rule
+            sed -i 's/,🤖 人工智能/,PROXY/g' clash.rule
+            sed -i 's/,🌏 国内站点/,DIRECT/g' clash.rule
             sed -i 's/MATCH,.*/FINAL,PROXY/g' clash.rule
             echo '[General]' > Shadowrocket.conf
             echo 'bypass-system = true' >> Shadowrocket.conf

@@ -13,7 +13,19 @@ include_remarks = [
 
 # 主策略组
 [[custom_groups]]
-name = "🚀 外网代理"
+name = "🚀 代理加速"
+type = "select"
+rule = [
+  "[]🚩 香港选择",
+  "[]🍌 台湾选择",
+  "[]🦁 狮城选择",
+  "[]👺 日本选择",
+  "[]🗽 美国选择",
+  "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "🤖 人工智能"
 type = "select"
 rule = [
   "[]🚩 香港选择",
@@ -37,14 +49,14 @@ rule = [
 ]
 
 [[custom_groups]]
-name = "🌐 直连规则"
+name = "🌏 国内站点"
 type = "select"
-rule = [ "[]DIRECT", "[]🚀 外网代理" ]
+rule = [ "[]DIRECT", "[]🚀 代理加速" ]
 
 [[custom_groups]]
-name = "🐟 漏网之鱼"
+name = "🐬 漏网之鱼"
 type = "select"
-rule = [ "[]🚀 外网代理", "[]DIRECT" ]
+rule = [ "[]🚀 代理加速", "[]DIRECT" ]
 
 
 # 地区选择策略组
@@ -124,25 +136,31 @@ ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rul
 interval = 120
 
 [[rulesets]]
+group = "🤖 人工智能"
+type = "clash-classic"
+ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/ai.yaml"
+interval = 120
+
+[[rulesets]]
 group = "📺 国外媒体"
 type = "clash-classic"
 ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/global-media-domain.yaml"
 interval = 120
 
 [[rulesets]]
-group = "🚀 外网代理"
+group = "🚀 代理加速"
 type = "clash-classic"
 ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-domain.yaml"
 interval = 120
 
 [[rulesets]]
-group = "🚀 外网代理"
+group = "🚀 代理加速"
 type = "clash-classic"
 ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/proxy-domain.yaml"
 interval = 120
 
 [[rulesets]]
-group = "🌐 直连规则"
+group = "🌏 国内站点"
 type = "clash-classic"
 ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/cn-domain.yaml"
 interval = 120
@@ -160,15 +178,15 @@ ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rul
 interval = 120
 
 [[rulesets]]
-group = "🚀 外网代理"
+group = "🚀 代理加速"
 type = "clash-classic"
 ruleset = "https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-ip.yaml"
 interval = 120
 
 [[rulesets]]
-group = "🌐 直连规则"
+group = "🌏 国内站点"
 ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
-group = "🐟 漏网之鱼"
+group = "🐬 漏网之鱼"
 ruleset = "[]FINAL"

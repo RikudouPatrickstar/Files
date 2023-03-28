@@ -10,7 +10,16 @@ custom:
 
   proxy_groups:
     # 主策略组
-    - name: 🚀 外网代理
+    - name: 🚀 代理加速
+      type: select
+      rule:
+        - "[]🚩 香港选择"
+        - "[]🍌 台湾选择"
+        - "[]🦁 狮城选择"
+        - "[]👺 日本选择"
+        - "[]🗽 美国选择"
+        - "[]DIRECT"
+    - name: 🤖 人工智能
       type: select
       rule:
         - "[]🚩 香港选择"
@@ -28,15 +37,15 @@ custom:
         - "[]👺 日本选择"
         - "[]🗽 美国选择"
         - "[]DIRECT"
-    - name: 🌐 直连规则
+    - name: 🌏 国内站点
       type: select
       rule:
         - "[]DIRECT"
-        - "[]🚀 外网代理"
-    - name: 🐟 漏网之鱼
+        - "[]🚀 代理加速"
+    - name: 🐬 漏网之鱼
       type: select
       rule:
-        - "[]🚀 外网代理"
+        - "[]🚀 代理加速"
         - "[]DIRECT"
 
     # 地区选择策略组
@@ -109,19 +118,23 @@ custom:
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/lan-domain.yaml
       interval: 120
+    - group: 🤖 人工智能
+      type: clash-classic
+      ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/ai.yaml
+      interval: 120
     - group: 📺 国外媒体
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/global-media-domain.yaml
       interval: 120
-    - group: 🚀 外网代理
+    - group: 🚀 代理加速
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-domain.yaml
       interval: 120
-    - group: 🚀 外网代理
+    - group: 🚀 代理加速
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/proxy-domain.yaml
       interval: 120
-    - group: 🌐 直连规则
+    - group: 🌏 国内站点
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/cn-domain.yaml
       interval: 120
@@ -133,11 +146,11 @@ custom:
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/global-media-ip.yaml
       interval: 120
-    - group: 🚀 外网代理
+    - group: 🚀 代理加速
       type: clash-classic
       ruleset: https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/rule-sets/google-ip.yaml
       interval: 120
-    - group: 🌐 直连规则
+    - group: 🌏 国内站点
       ruleset: "[]GEOIP,CN"
-    - group: 🐟 漏网之鱼
+    - group: 🐬 漏网之鱼
       ruleset: "[]FINAL"
