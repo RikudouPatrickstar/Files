@@ -25,6 +25,16 @@ jobs:
         git config --global user.email 68163551+RikudouPatrickstar@users.noreply.github.com
         git config --global user.name RikudouPatrickstar
         mkdir -p ./rules/rule-sets
+    - name: Get AI Rule-sets
+      run: |
+        cd ./rules/rule-sets
+        echo 'payload:' > ai.yaml
+        echo '  - DOMAIN-SUFFIX,openai.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,openai.nooc.ink' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,AI.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,cdn.auth0.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,bing.com' >> ai.yaml
     - name: Get GlobalMedia Rule-sets
       env:
         GLOBAL_MEDIA_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
