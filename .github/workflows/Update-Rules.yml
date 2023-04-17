@@ -31,8 +31,9 @@ jobs:
         echo 'payload:' > ai.yaml
         echo '  - DOMAIN-SUFFIX,openai.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,openai.nooc.ink' >> ai.yaml
-        echo '  - DOMAIN-SUFFIX,AI.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,ai.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,cdn.auth0.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,identrust.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,opendns.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,bing.com' >> ai.yaml
