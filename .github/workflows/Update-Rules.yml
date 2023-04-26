@@ -29,14 +29,18 @@ jobs:
       run: |
         cd ./rules/rule-sets
         echo 'payload:' > ai.yaml
+        echo '  - DOMAIN,cdn.auth0.com' >> ai.yaml
+        echo '  - DOMAIN,challenges.cloudflare.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,ai.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,identrust.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,openai.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,openai.nooc.ink' >> ai.yaml
-        echo '  - DOMAIN-SUFFIX,ai.com' >> ai.yaml
-        echo '  - DOMAIN-SUFFIX,cdn.auth0.com' >> ai.yaml
-        echo '  - DOMAIN-SUFFIX,identrust.com' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net' >> ai.yaml
-        echo '  - DOMAIN-SUFFIX,opendns.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,openaicom.imgix.net' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net' >> ai.yaml
         echo '  - DOMAIN-SUFFIX,bing.com' >> ai.yaml
+        echo '  - DOMAIN-SUFFIX,bing.com.cn' >> ai.yaml
     - name: Get GlobalMedia Rule-sets
       env:
         GLOBAL_MEDIA_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
