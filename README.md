@@ -6,11 +6,6 @@
 &config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini
 ```
 
-[Simple.ini](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Simple.ini):
-```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FSimple.ini
-```
-
 [SpecialArea.ini](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/SpecialArea.ini):
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FSpecialArea.ini
