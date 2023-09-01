@@ -108,6 +108,7 @@ jobs:
             sed -i 's/,🌏 国内站点/,DIRECT/g' clash.rule
             sed -i 's/MATCH,.*/FINAL,PROXY/g' clash.rule
             echo '[General]' > Shadowrocket.conf
+            echo 'ipv6 = false' >> Shadowrocket.conf
             echo 'bypass-system = true' >> Shadowrocket.conf
             echo 'dns-server = tls://223.5.5.5, tls://1.12.12.12' >> Shadowrocket.conf
             echo 'skip-proxy = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, localhost, *.local, *.crashlytics.com, *.cn' >> Shadowrocket.conf
