@@ -15,6 +15,8 @@ payload:
   - DOMAIN-SUFFIX,identrust.com
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,intercomcdn.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,oaiusercontent.com
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,openai.nooc.ink
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
