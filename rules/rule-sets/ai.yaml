@@ -1,8 +1,9 @@
 payload:
-  - DOMAIN,bard.google.com
+  - DOMAIN,cdn.usefathom.com
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bing.com.cn
   - DOMAIN-SUFFIX,cdn.auth0.com
