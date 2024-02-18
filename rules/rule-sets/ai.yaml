@@ -1,4 +1,5 @@
 payload:
+  - DOMAIN,ai.google.dev
   - DOMAIN,cdn.usefathom.com
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,anthropic.com
@@ -13,6 +14,8 @@ payload:
   - DOMAIN-SUFFIX,client-api.arkoselabs.com
   - DOMAIN-SUFFIX,statsigapi.net
   - DOMAIN-SUFFIX,featuregates.org
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,identrust.com
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,intercomcdn.com
