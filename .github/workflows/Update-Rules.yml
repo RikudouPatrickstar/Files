@@ -71,15 +71,11 @@ jobs:
         | egrep -v 'DOMAIN.*(,|\.)[A-Za-z]*[0-9]{4,}[A-Za-z]*\.[A-Za-z]+$' >> proxy-domain.yaml
     - name: Get CN Rule-sets
       env:
-        CN_DOMAIN_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP_Classical.yaml
+        CN_DOMAIN_URL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.yaml
         CN_IP_URL: https://raw.githubusercontent.com/RikudouPatrickstar/GeoIP2-CN/release/cncidr.yaml
       run: |
         cd ./rules/rule-sets
-        echo 'payload:' > cn-domain.yaml
-        curl -sSL -4 --connect-timeout 10 $CN_DOMAIN_URL -o - \
-        | grep 'DOMAIN' \
-        | egrep -v 'DOMAIN.*(,|\.)[0-9]+\.[A-Za-z]+$' \
-        | egrep -v 'DOMAIN.*(,|\.)[A-Za-z]*[0-9]{4,}[A-Za-z]*\.[A-Za-z]+$' >> cn-domain.yaml
+        curl -sSL -4 --connect-timeout 10 $CN_DOMAIN_URL -o cn-domain.yaml
         curl -sSL -4 --connect-timeout 10 $CN_IP_URL -o cn-ip.yaml
     - name: Get Lan Rules
       env:
