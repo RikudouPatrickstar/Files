@@ -983,8 +983,6 @@ payload:
   - DOMAIN-SUFFIX,tiktok.us
   - DOMAIN-SUFFIX,tiktokcdn.com
   - DOMAIN-SUFFIX,tiktokv.com
-  - DOMAIN-SUFFIX,tiktokv.us
-  - DOMAIN-SUFFIX,tiktokw.com
   - DOMAIN-SUFFIX,timestalks.com
   - DOMAIN-SUFFIX,tospotify.com
   - DOMAIN-SUFFIX,ttvnw.net
