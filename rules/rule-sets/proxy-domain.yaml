@@ -216,6 +216,7 @@ payload:
   - DOMAIN-SUFFIX,dmm.co.jp
   - DOMAIN-SUFFIX,dnsimple.com
   - DOMAIN-SUFFIX,docker.com
+  - DOMAIN-SUFFIX,docker.io
   - DOMAIN-SUFFIX,doub.io
   - DOMAIN-SUFFIX,dowjones.com
   - DOMAIN-SUFFIX,dribbble.com
