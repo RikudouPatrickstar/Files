@@ -2,13 +2,17 @@ payload:
   - DOMAIN,ai.google.dev
   - DOMAIN,cdn.usefathom.com
   - DOMAIN-SUFFIX,ai.com
+  - DOMAIN-SUFFIX,AI.com
+  - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,Anthropic.com
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bing.com.cn
   - DOMAIN-SUFFIX,cdn.auth0.com
   - DOMAIN-SUFFIX,challenges.cloudflare.com
+  - DOMAIN-SUFFIX,ciciai.com
   - DOMAIN-SUFFIX,civitai.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,client-api.arkoselabs.com
@@ -25,7 +29,9 @@ payload:
   - DOMAIN-SUFFIX,openai.nooc.ink
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
   - DOMAIN-SUFFIX,opendns.com
+  - DOMAIN-SUFFIX,opera-api.com
   - DOMAIN-SUFFIX,poe.com
   - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,stripe.com
+  - DOMAIN-KEYWORD,chatgpt
   - DOMAIN-KEYWORD,openai
