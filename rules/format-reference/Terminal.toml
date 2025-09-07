@@ -91,7 +91,7 @@ rule = [ "[]⚡ 美国自动", "(美国|US|((?i)United States)|🇺🇲)" ]
 name = "⚡ 香港自动"
 type = "url-test"
 rule = [ "(香港|HK|((?i)Hong Kong)|🇭🇰)" ]
-url = "http://www.gstatic.com/generate_204"
+url = "http://www.google.com/generate_204"
 interval = 9
 tolerance = 12
 
@@ -99,7 +99,7 @@ tolerance = 12
 name = "⚡ 台湾自动"
 type = "url-test"
 rule = [ "(台湾|TW|((?i)Taiwan)|🇹🇼)" ]
-url = "http://www.gstatic.com/generate_204"
+url = "http://www.google.com/generate_204"
 interval = 9
 tolerance = 12
 
@@ -107,7 +107,7 @@ tolerance = 12
 name = "⚡ 狮城自动"
 type = "url-test"
 rule = [ "(狮城|新加坡|SG|((?i)Singapore)|🇸🇬)" ]
-url = "http://www.gstatic.com/generate_204"
+url = "http://www.google.com/generate_204"
 interval = 9
 tolerance = 12
 
@@ -115,7 +115,7 @@ tolerance = 12
 name = "⚡ 日本自动"
 type = "url-test"
 rule = [ "(日本|JP|((?i)Japan)|🇯🇵)" ]
-url = "http://www.gstatic.com/generate_204"
+url = "http://www.google.com/generate_204"
 interval = 9
 tolerance = 12
 
@@ -123,7 +123,7 @@ tolerance = 12
 name = "⚡ 美国自动"
 type = "url-test"
 rule = [ "(美国|US|((?i)United States)|🇺🇲)" ]
-url = "http://www.gstatic.com/generate_204"
+url = "http://www.google.com/generate_204"
 interval = 9
 tolerance = 12
 
