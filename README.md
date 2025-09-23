@@ -6,11 +6,6 @@
 &config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini
 ```
 
-[SpecialArea.ini](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/SpecialArea.ini):
-```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FSpecialArea.ini
-```
-
 ## Shadowrocket 远程配置
 [Shadowrocket.conf](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Shadowrocket.conf)
 ```
