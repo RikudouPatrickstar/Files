@@ -14,6 +14,7 @@ payload:
   - DOMAIN,cdp.cloud.unity3d.com
   - DOMAIN,clubhouse.pubnubapi.com
   - DOMAIN,copilot.microsoft.com
+  - DOMAIN,github-api.arkoselabs.com
   - DOMAIN,lab.skk.moe
   - DOMAIN,location.microsoft.com
   - DOMAIN,login.microsoftonline.com
@@ -287,6 +288,9 @@ payload:
   - DOMAIN-SUFFIX,ghostnoteapp.com
   - DOMAIN-SUFFIX,gitbook.com
   - DOMAIN-SUFFIX,githack.com
+  - DOMAIN-SUFFIX,github.ai
+  - DOMAIN-SUFFIX,github.career
+  - DOMAIN-SUFFIX,githubsupport.com
   - DOMAIN-SUFFIX,gitlab.com
   - DOMAIN-SUFFIX,gitlab.io
   - DOMAIN-SUFFIX,globalsign.com
@@ -297,6 +301,8 @@ payload:
   - DOMAIN-SUFFIX,gongm.in
   - DOMAIN-SUFFIX,goodreaders.com
   - DOMAIN-SUFFIX,goodreads.com
+  - DOMAIN-SUFFIX,google
+  - DOMAIN-SUFFIX,googlezip.net
   - DOMAIN-SUFFIX,gosetsuden.jp
   - DOMAIN-SUFFIX,graphql.org
   - DOMAIN-SUFFIX,gravatar.com
