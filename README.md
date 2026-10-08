@@ -6,6 +6,10 @@
 &config=https%3A%2F%2Fraw.githubusercontent.com%2FRikudouPatrickstar%2FFiles%2Fmaster%2Frules%2FTerminal.ini
 ```
 
+```
+&config=https%3A%2F%2Fgcore.jsdelivr.net%2Fgh%2FRikudouPatrickstar%2FFiles%40master%2Frules%2FTerminal_cdn.ini
+```
+
 ## Shadowrocket 远程配置
 [Shadowrocket.conf](https://raw.githubusercontent.com/RikudouPatrickstar/Files/master/rules/Shadowrocket.conf)
 ```
